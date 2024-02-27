@@ -18,16 +18,17 @@
 			});
 
 			const { data } = await response.json();
-
-			result.update((list) => [...list, data.id]);
-		} catch (error: any) {
-			console.error(`Error for request ${id}: ${error.message}`);
+			if (response.ok) {
+				result.update((list) => [...list, data.id]);
+			}
+		} catch (error: unknown) {
+			console.error(`Error for request ${id}: ${error}`);
 		}
 	};
 
 	const executeRequestsSequentially = () => {
 		if (requestsExecuted >= totalRequests) {
-		  disabled = false;
+			disabled = false;
 			console.log('All requests executed');
 			return;
 		}
