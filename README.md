@@ -1,6 +1,18 @@
 # devit-software-test-task
 Тестове завдання для DevIT Software
 
+# Команди
+- ``make build`` - збілдити контейнери і встановити бібліотеки для node
+- ``make dev`` - запустити версію для розробки
+- ``make prod`` - продуктова версія
+- ``make node-sh`` - консоль node
+- ``make down`` - вимкнути контейнери
+- ``make clean`` - вимкнути і очистити
+
+# Змінні .env
+- APP_PORT=3000 - порт на якому буде запущено додаток
+- REQUEST_LIMIT=50 - загальне обмеження запитів на одного клієнта
+
 # Task
 Implement client-server data fetch logic by following the next steps:
 
