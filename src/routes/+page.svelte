@@ -27,6 +27,7 @@
 
 	const executeRequestsSequentially = () => {
 		if (requestsExecuted >= totalRequests) {
+		  disabled = false;
 			console.log('All requests executed');
 			return;
 		}
@@ -57,8 +58,6 @@
 		result.update(() => []);
 
 		executeRequestsSequentially();
-
-		disabled = false;
 	};
 </script>
 
